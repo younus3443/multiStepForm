@@ -27,7 +27,7 @@
 
 
       <div class="flex justify-center md:gap-5 ">
-        <button class="h-10 w-10 ml-4 rounded-full bg-[hsl(206,94%,87%)] text-[hsl(213,96%,18%)] font-bold ">2</button>
+        <button class="h-10 w-10 rounded-full bg-[hsl(206,94%,87%)] text-[hsl(213,96%,18%)] font-bold ">2</button>
         <div class="hidden md:block ">
           <p class="text-gray-400 text-sm">STEP 2</p>
           <p class="text-white font-bold">SELECT PLAN</p>
@@ -65,7 +65,7 @@
         <img src="./images/icon-arcade.svg">
         <div>
           <span class="font-bold text-blue-900">Arcade</span>
-          <span class="text-gray-400 block">$9/mo</span>
+          <span class="arcadeprice text-gray-400 block">$9/mo</span>
         </div>
       </button>
       <button class="flex items-center gap-4 border hover:border-[hsl(243,100%,62%)]  rounded-lg p-4 cursor-pointer
@@ -73,7 +73,7 @@
         <img src="./images/icon-advanced.svg">
         <div>
           <span class="font-bold text-blue-900">Advanced</span>
-          <span class="text-gray-400 block">$12/mo</span>
+          <span class="advancedprice text-gray-400 block">$12/mo</span>
         </div>
       </button>
       <button class="flex items-center gap-4 border rounded-lg p-4 hover:border-[hsl(243,100%,62%)] cursor-pointer
@@ -81,7 +81,7 @@
         <img src="./images/icon-pro.svg">
         <div>
           <span class="font-bold text-blue-900">Pro</span>
-          <span class="text-gray-400 block">$15/mo</span>
+          <span class="proprice text-gray-400 block">$15/mo</span>
         </div>
       </button>
 
@@ -91,15 +91,15 @@
       <span class="text-blue-900 font-bold">Monthly</span>
 
       <label class="h-6 w-12 relative inline-block cursor-pointer">
-        <input type="checkbox" class="peer sr-only">
-        <div class="w-full h-full bg-gray-300 rounded-full peer-checked:bg-blue-900"></div>
+        <input type="checkbox" class="toggle peer sr-only">
+        <div class="w-full h-full bg-blue-900 rounded-full peer-checked:bg-blue-900"></div>
         <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition peer-checked:translate-x-6"></div>
       </label>
 
       <span class="text-gray-400 font-bold">Yearly</span>
     </div>
-    <div class="fixed bottom-0 left-0 right-0 bg-white h-20 flex justify-between items-center px-6
-                md:static md:h-auto md:bg-transparent md:mt-12">
+    <div class="fixed bottom-0 left-0 right-0  bg-white h-20 flex justify-between items-center px-6
+                md:static md:h-auto md:bg-transparent md:mt-20">
       <button onclick="location.href='index.html'" class="text-gray-400">
         Go Back
       </button>
