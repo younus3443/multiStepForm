@@ -57,26 +57,33 @@
         </p>
 
         <div class="flex flex-col gap-4">
-            <div class="flex flex-col">
-            <label class="text-blue-900">Name</label>
-            <input type="text" placeholder="e.g. Stephen King"
-                    class="border p-2 rounded-lg font-semibold"/>
+
+            <div class="relative flex flex-col">
+                <label class="text-blue-900">Name</label>
+                <input type="text"
+                    class="name w-full p-3 font-bold rounded-lg border text-blue-900 border-gray-300 
+                        focus:outline-none focus:border-blue-500"
+                    placeholder="e.g. Stephen King">
             </div>
 
-            <div class="flex flex-col">
-            <label class="text-blue-900">Email Address</label>
-            <input type="text" placeholder="e.g. StephenKing@lorem.com"
-                    class="border p-2 rounded-lg font-semibold"/>
+            <div class="relative flex flex-col">
+                <label class="text-blue-900">Email Address</label>
+                <input type="text"
+                    class="email w-full p-3 font-bold rounded-lg border border-gray-300 text-blue-900
+                        focus:outline-none focus:border-blue-500"
+                    placeholder="e.g. StephenKing@lorem.com">
             </div>
 
-            <div class="flex flex-col">
-            <label class="text-blue-900">Phone Number</label>
-            <input type="text" placeholder="e.g. +1 234 567 890"
-                    class="border p-2 rounded-lg font-semibold"/>
+            <div class="relative flex flex-col">
+                <label class="text-blue-900">Phone Number</label>
+                <input type="text"
+                    class="number w-full p-3 font-bold rounded-lg border border-gray-300 text-blue-900
+                        focus:outline-none focus:border-blue-500"
+                    placeholder="e.g. +1 234 567 890">
             </div>
         </div>
-        <div class="fixed bottom-0 left-0 right-0 bg-white h-20 flex justify-end items-center px-6 md:static md:h-auto md:mt-[25%]">
-            <button onclick="location.href='step2.html'" class="bg-blue-900 text-white px-6 py-2 rounded-lg">
+        <div class="fixed bottom-0 left-0 right-0 bg-white h-20 flex justify-end items-center px-6 md:static md:h-auto md:mt-[20%]">
+            <button  class="next bg-blue-900 text-white px-6 py-2 rounded-lg">
                 Next Step
             </button>
         </div>
