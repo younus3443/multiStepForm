@@ -118,13 +118,11 @@ function updatePlanPrices() {
 function selectPlan(button, priceElement, planName) {
 
     if (!button) return
-
     [btn1, btn2, btn3].forEach(b => {
         if (b) b.classList.remove("bg-blue-50")
     })
 
     button.classList.add("bg-blue-50")
-
     localStorage.setItem("selectedPlan", planName)
     localStorage.setItem("selectedPrice", priceElement.textContent)
 }
@@ -140,23 +138,24 @@ const addons = document.querySelectorAll(".addon")
 
 if (addons.length > 0) {
     const savedAddons = JSON.parse(localStorage.getItem("selectedAddons")) || []
-
     addons.forEach(addon => {
-
         const match = savedAddons.find(a => a.name === addon.dataset.name)
         if (match) addon.checked = true
-
         addon.addEventListener("change", () => {
-
             let selected = []
-
+            
             addons.forEach(a => {
+                const card = a.closest(".pick")
                 if (a.checked) {
+                    card.classList.add("bg-blue-50", "border-blue-500")
                     selected.push({
                         name: a.dataset.name,
                         monthly: a.dataset.monthly,
                         yearly: a.dataset.yearly
                     })
+                }else{
+                    card.classList.remove("bg-blue-50", "border-blue-500")
+
                 }
             })
 
@@ -164,6 +163,22 @@ if (addons.length > 0) {
         })
     })
 }
+
+
+
+
+const billingType = getBillingType()
+
+addons.forEach(addon => {
+    const pickCard = addon.closest(".pick")
+    const priceElement = pickCard.querySelector(".serviceprice, .storageprice, .profileprice")
+    if (billingType === "yearly") {
+        priceElement.textContent = `+$${addon.dataset.yearly}/yr`
+    } else {
+        priceElement.textContent = `+$${addon.dataset.monthly}/mo`
+    }
+
+})
 
 
 // STEP-4
@@ -190,8 +205,6 @@ if (planType && planPrice) {
 
         let basePrice = getNumber(savedPrice)
         let addonTotal = 0
-
-        // remove static addon rows
         document.querySelectorAll(".dynamic-addon").forEach(e => e.remove())
 
         savedAddons.forEach(addon => {
